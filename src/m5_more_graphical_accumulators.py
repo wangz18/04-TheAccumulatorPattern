@@ -359,6 +359,32 @@ def draw_lines_from_rectangles(rectangle1, rectangle2, n, window):
     ####################################################################
     # ------------------------------------------------------------------
 
+    rectangle1.attach_to(window)
+    rectangle2.attach_to(window)
+    center1a = rectangle1.get_center()
+    center2a = rectangle2.get_center()
+    pointb = rg.Point(rectangle1.corner_1.x,rectangle1.corner_2.y)
+    dx = abs(center1a.x - pointb.x)
+    dy = abs(center1a.y - pointb.y)
+    for k in range (n):
+        # Line1
+        start1 = rg.Point(center1a.x-k*2*dx,center1a.y+k*2*dy)
+        end1 = rg.Point(center2a.x-k*2*dx,center2a.y+k*2*dy)
+        Line1 = rg.Line(start1,end1)
+        Line1.thickness = 5
+        Line1.color = rectangle1.outline_color
+        Line1.attach_to(window)
+        # Line2
+        start2 = rg.Point(center1a.x-dx-k*2*dx,center1a.y+dy+k*2*dy)
+        end2 = rg.Point(center2a.x-dx-k*2*dx,center2a.y+dy+k*2*dy)
+        Line2 = rg.Line(start2, end2)
+        Line2.thickness = 5
+        Line2.color = rectangle2.outline_color
+        Line2.attach_to(window)
+
+        window.render()
+
+
 
 # ----------------------------------------------------------------------
 # Calls  main  to start the ball rolling.
