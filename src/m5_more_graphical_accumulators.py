@@ -345,7 +345,7 @@ def draw_lines_from_rectangles(rectangle1, rectangle2, n, window):
       :type window: rg.RoseWindow
       """
     # ------------------------------------------------------------------
-    # TODO: 5. Implement and test this function.
+    # DONE: 5. Implement and test this function.
     #          Tests have been written for you (above).
     #
     # CONSIDER using the ACCUMULATOR IN GRAPHICS pattern,
@@ -366,7 +366,7 @@ def draw_lines_from_rectangles(rectangle1, rectangle2, n, window):
     pointb = rg.Point(rectangle1.corner_1.x,rectangle1.corner_2.y)
     dx = abs(center1a.x - pointb.x)
     dy = abs(center1a.y - pointb.y)
-    for k in range (n):
+    for k in range(n):
         # Line1
         start1 = rg.Point(center1a.x-k*2*dx,center1a.y+k*2*dy)
         end1 = rg.Point(center2a.x-k*2*dx,center2a.y+k*2*dy)
